@@ -1,0 +1,20 @@
+CREATE PROCEDURE [dbo].UpdateProduct
+	@ProductId int ,
+	@ProductName varchar(50),
+	@Rate decimal(18,2),
+	@Description varchar(200),
+	@CategoryName varchar(50)
+	As
+	update Products  set ProductName =@ProductName, Rate=@Rate, Description=@Description, CategoryName=@CategoryName
+RETURN 0
+
+---------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].InsertProduct
+	@ProductId int,
+	@ProductName varchar(50),
+	@Rate decimal(18,2),
+	@Description varchar(200),
+	@CategoryName varchar(50)
+	As
+	insert into  Products values (@ProductName,@Rate, @Description, @CategoryName)
+RETURN 0
